@@ -1,22 +1,35 @@
 import { FileText, ExternalLink, MessageCircle, ArrowUpRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig, whatsappLink } from "@/lib/site-config";
+import bgServicios from "@/assets/bg-servicios-ptm.jpg";
 
 export const Services = () => {
   return (
     <section id="servicios" className="relative py-28 lg:py-36 bg-gradient-deep overflow-hidden">
+      {/* Background image */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-cover bg-center opacity-[0.22] mix-blend-luminosity"
+        style={{ backgroundImage: `url(${bgServicios})` }}
+      />
+      {/* Brand color overlay to keep palette cohesive */}
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/75 to-secondary/80" />
+
       {/* Decorative blobs */}
       <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-teal/10 rounded-full blur-3xl" />
+      {/* Grid overlay — same checkered style, layered on top of image + overlay */}
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.05] pointer-events-none"
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(hsl(195 50% 97%) 1px, transparent 1px), linear-gradient(90deg, hsl(195 50% 97%) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
+      {/* Bottom fade for smooth transition into next section */}
+      <div aria-hidden className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-primary/90 to-transparent pointer-events-none" />
 
       <div className="container relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
