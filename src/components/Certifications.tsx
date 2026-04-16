@@ -25,11 +25,13 @@ export const Certifications = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-6 gap-6">
           {certs.map((c, i) => (
             <article
               key={c.code}
-              className="group relative bg-card border border-border rounded-lg p-8 hover:border-accent/50 hover:shadow-elegant transition-all duration-500 overflow-hidden"
+              className={`group relative bg-card border border-border rounded-lg p-8 hover:border-accent/50 hover:shadow-elegant transition-all duration-500 overflow-hidden lg:col-span-2 ${
+                i === 3 ? "lg:col-start-2" : ""
+              }`}
               style={{ animationDelay: `${i * 60}ms` }}
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-accent opacity-0 group-hover:opacity-10 rounded-full blur-2xl transition-opacity duration-500" />
