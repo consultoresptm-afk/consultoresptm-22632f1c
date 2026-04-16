@@ -1,6 +1,6 @@
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { siteConfig, whatsappLink } from "@/lib/site-config";
+import { siteConfig, whatsappLink, openWhatsApp } from "@/lib/site-config";
 import heroImg from "@/assets/hero-corporate.jpg";
 
 export const Hero = () => {
@@ -56,7 +56,7 @@ export const Hero = () => {
               </a>
             </Button>
             <Button asChild variant="outlineLight" size="xl">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <a href={whatsappLink} onClick={(e) => { e.preventDefault(); openWhatsApp(); }} target="_blank" rel="noopener noreferrer">
                 Hablar con un experto
               </a>
             </Button>

@@ -1,10 +1,11 @@
 import { MessageCircle } from "lucide-react";
-import { whatsappLink } from "@/lib/site-config";
+import { whatsappLink, openWhatsApp } from "@/lib/site-config";
 
 export const WhatsAppFloat = () => {
   return (
     <a
       href={whatsappLink}
+      onClick={(e) => { e.preventDefault(); openWhatsApp(); }}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Hablar por WhatsApp"
