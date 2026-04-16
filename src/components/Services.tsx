@@ -5,7 +5,7 @@ import bgServicios from "@/assets/bg-servicios-ptm.jpg";
 
 export const Services = () => {
   return (
-    <section id="servicios" className="relative py-28 lg:py-36 bg-gradient-deep overflow-hidden">
+    <section id="servicios" className="relative py-20 sm:py-24 lg:py-36 bg-gradient-deep overflow-hidden">
       {/* Background image */}
       <div
         aria-hidden
@@ -32,15 +32,15 @@ export const Services = () => {
       <div aria-hidden className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-primary/90 to-transparent pointer-events-none" />
 
       <div className="container relative z-10">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 backdrop-blur-md text-primary-foreground/90 text-xs uppercase tracking-[0.22em] mb-6">
-            <Sparkles className="w-3.5 h-3.5 text-teal" />
-            Portafolio de Servicios
+        <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 backdrop-blur-md text-primary-foreground/90 text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.22em] mb-5 sm:mb-6">
+            <Sparkles className="w-3.5 h-3.5 text-teal shrink-0" />
+            <span>Portafolio de Servicios</span>
           </div>
-          <h2 className="font-display text-primary-foreground text-4xl md:text-5xl lg:text-6xl leading-[1.1] mb-6 text-balance">
+          <h2 className="font-display text-primary-foreground text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] sm:leading-[1.1] mb-5 sm:mb-6 text-balance">
             Conoce nuestras <span className="italic text-teal">soluciones integrales</span>
           </h2>
-          <p className="text-primary-foreground/80 text-lg md:text-xl leading-relaxed">
+          <p className="text-primary-foreground/80 text-base sm:text-lg md:text-xl leading-relaxed">
             En {siteConfig.company} ofrecemos un portafolio completo de servicios en gestión empresarial,
             sostenibilidad, calidad y certificaciones ISO. Hemos preparado un brochure corporativo con toda
             nuestra oferta para brindarte una visión clara y detallada.
@@ -49,8 +49,8 @@ export const Services = () => {
 
         {/* Brochure card */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-card/95 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-elegant border border-primary-foreground/10">
-            <div className="grid md:grid-cols-[1fr_auto] gap-10 items-center">
+          <div className="relative bg-card/95 backdrop-blur-md rounded-2xl p-6 sm:p-8 md:p-12 shadow-elegant border border-primary-foreground/10">
+            <div className="grid md:grid-cols-[1fr_auto] gap-8 sm:gap-10 items-center">
               {/* Preview thumbnail */}
               <div className="relative group">
                 <a
@@ -102,10 +102,10 @@ export const Services = () => {
 
               {/* CTA stack */}
               <div className="flex flex-col gap-4 md:min-w-[280px]">
-                <div className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">
+                <div className="text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.2em] text-accent font-semibold">
                   Documento ejecutivo
                 </div>
-                <h3 className="font-display text-2xl text-primary leading-tight">
+                <h3 className="font-display text-xl sm:text-2xl text-primary leading-tight">
                   Información clara, estructurada y lista para llevar tu empresa al siguiente nivel.
                 </h3>
 

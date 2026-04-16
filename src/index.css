@@ -77,12 +77,14 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'IBM Plex Sans', system-ui, sans-serif;
     font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, .font-display {
