@@ -27,7 +27,6 @@ export const About = () => {
             </div>
             {/* Floating badge */}
             <div className="absolute -bottom-8 -right-4 md:-right-8 bg-card border border-border rounded-lg p-6 shadow-elegant max-w-[260px] animate-float-slow">
-              <div className="text-xs uppercase tracking-widest text-accent font-semibold mb-2">Desde 2009</div>
               <div className="font-display text-xl text-primary leading-tight">
                 Consultoría que transforma resultados.
               </div>
