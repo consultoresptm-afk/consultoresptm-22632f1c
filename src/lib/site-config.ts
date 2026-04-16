@@ -14,24 +14,49 @@ export const siteConfig = {
 const cleanNumber = siteConfig.whatsappNumber.replace(/[^0-9]/g, "");
 const encodedMsg = encodeURIComponent(siteConfig.whatsappMessage);
 
-// Default link (wa.me is the official short link)
+// Universal short link — works for SEO and as visible href
 export const whatsappLink = `https://wa.me/${cleanNumber}?text=${encodedMsg}`;
 
-// Smart opener: detects platform to avoid the api.whatsapp.com redirect
-// (which some corporate firewalls block).
+/**
+ * Robust WhatsApp opener that tries multiple strategies:
+ * 1. On mobile → wa.me (opens the native app reliably)
+ * 2. On desktop → tries the whatsapp:// protocol first (opens Desktop app or Web
+ *    if installed), then falls back to wa.me which the user's browser will handle.
+ *
+ * This avoids relying on web.whatsapp.com or api.whatsapp.com directly,
+ * since those can be blocked by some corporate firewalls.
+ */
 export const openWhatsApp = (customMessage?: string) => {
   const msg = customMessage ? encodeURIComponent(customMessage) : encodedMsg;
   const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
 
-  // Mobile → native app scheme; Desktop → WhatsApp Web (avoids api.whatsapp.com)
-  const url = isMobile
-    ? `https://wa.me/${cleanNumber}?text=${msg}`
-    : `https://web.whatsapp.com/send?phone=${cleanNumber}&text=${msg}`;
+  if (isMobile) {
+    // Mobile: wa.me opens the native app instantly
+    window.open(`https://wa.me/${cleanNumber}?text=${msg}`, "_blank", "noopener,noreferrer");
+    return;
+  }
 
-  const win = window.open(url, "_blank", "noopener,noreferrer");
+  // Desktop: try the protocol handler first (works if WhatsApp Desktop is installed)
+  const protocolUrl = `whatsapp://send?phone=${cleanNumber}&text=${msg}`;
+  const fallbackUrl = `https://wa.me/${cleanNumber}?text=${msg}`;
 
-  // Fallback: if popup blocked or fails, try the universal short link
+  // Open fallback in a new tab — wa.me's landing page lets the user click "Continue to chat"
+  // which opens the app if installed, or web.whatsapp.com otherwise
+  const win = window.open(fallbackUrl, "_blank", "noopener,noreferrer");
+
+  // Also try the protocol handler — if WhatsApp Desktop is installed it'll be focused
+  try {
+    const iframe = document.createElement("iframe");
+    iframe.style.display = "none";
+    iframe.src = protocolUrl;
+    document.body.appendChild(iframe);
+    setTimeout(() => iframe.remove(), 1000);
+  } catch (_) {
+    // ignore — fallback tab is already open
+  }
+
   if (!win) {
-    window.location.href = `https://wa.me/${cleanNumber}?text=${msg}`;
+    // Popup blocked → navigate the current tab
+    window.location.href = fallbackUrl;
   }
 };
