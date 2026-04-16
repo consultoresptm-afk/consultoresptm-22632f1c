@@ -1,13 +1,36 @@
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig, whatsappLink, openWhatsApp } from "@/lib/site-config";
+import bgContact from "@/assets/team-ptm.jpg";
 
 export const Contact = () => {
   return (
-    <section id="contacto" className="relative py-28 lg:py-36 bg-gradient-hero overflow-hidden">
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: "radial-gradient(circle at 20% 30%, hsl(178 41% 55% / 0.4), transparent 40%), radial-gradient(circle at 80% 70%, hsl(190 56% 39% / 0.4), transparent 40%)"
-      }} />
+    <section id="contacto" className="relative py-28 lg:py-36 bg-gradient-deep overflow-hidden">
+      {/* Background image */}
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-cover bg-center opacity-[0.22] mix-blend-luminosity"
+        style={{ backgroundImage: `url(${bgContact})` }}
+      />
+      {/* Brand color overlay to keep palette cohesive */}
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-br from-primary/85 via-primary/75 to-secondary/80" />
+
+      {/* Decorative blobs */}
+      <div className="absolute top-1/4 -left-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-teal/10 rounded-full blur-3xl" />
+
+      {/* Grid overlay — same checkered style */}
+      <div
+        aria-hidden
+        className="absolute inset-0 opacity-[0.07] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(hsl(195 50% 97%) 1px, transparent 1px), linear-gradient(90deg, hsl(195 50% 97%) 1px, transparent 1px)",
+          backgroundSize: "60px 60px",
+        }}
+      />
+      {/* Top fade for smooth transition from previous section */}
+      <div aria-hidden className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/90 to-transparent pointer-events-none" />
 
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
