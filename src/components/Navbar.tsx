@@ -3,6 +3,7 @@ import { Menu, X, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
+import logoPtm from "@/assets/logo-ptm.jpg";
 
 const links = [
   { label: "Inicio", href: "#inicio" },
@@ -43,10 +44,16 @@ export const Navbar = () => {
       <div className="container flex items-center justify-between h-20">
         <a href="#inicio" onClick={(e) => { e.preventDefault(); handleNav("#inicio"); }} className="flex items-center gap-3 group">
           <div className={cn(
-            "h-11 w-11 rounded-md flex items-center justify-center font-display font-bold text-lg transition-colors duration-300",
-            scrolled ? "bg-primary text-primary-foreground" : "bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/20 backdrop-blur"
+            "h-12 w-12 rounded-md flex items-center justify-center overflow-hidden transition-all duration-300 shadow-soft",
+            scrolled ? "bg-white" : "bg-white/95 ring-1 ring-primary-foreground/20"
           )}>
-            PTM
+            <img
+              src={logoPtm}
+              alt="Logo Consultores PTM Gestión y Cumplimiento SAS"
+              className="h-full w-full object-contain"
+              width={48}
+              height={48}
+            />
           </div>
           <div className="hidden sm:block">
             <div className={cn("font-display text-sm leading-tight", scrolled ? "text-foreground" : "text-primary-foreground")}>
