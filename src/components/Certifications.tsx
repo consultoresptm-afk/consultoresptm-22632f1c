@@ -1,12 +1,11 @@
-import { Award, Leaf, ShieldCheck, HardHat, Lock, Stethoscope } from "lucide-react";
+import { Award, Leaf, HardHat, Lock, Zap } from "lucide-react";
 
 const certs = [
   { code: "ISO 9001", title: "Gestión de la Calidad", desc: "Sistemas robustos para garantizar excelencia operacional y satisfacción del cliente.", icon: Award },
   { code: "ISO 14001", title: "Gestión Ambiental", desc: "Reducción de impactos ambientales y cumplimiento de la normativa vigente.", icon: Leaf },
   { code: "ISO 45001", title: "Seguridad y Salud en el Trabajo", desc: "Ambientes laborales seguros, prevención de riesgos y bienestar integral.", icon: HardHat },
   { code: "ISO 27001", title: "Seguridad de la Información", desc: "Protección de datos críticos y gestión de riesgos de ciberseguridad.", icon: Lock },
-  { code: "ISO 37001", title: "Antisoborno", desc: "Cultura de integridad, transparencia y prevención de prácticas corruptas.", icon: ShieldCheck },
-  { code: "ISO 13485", title: "Dispositivos Médicos", desc: "Calidad y trazabilidad para fabricantes y proveedores del sector salud.", icon: Stethoscope },
+  { code: "ISO 50001", title: "Gestión de la Energía", desc: "Optimización del uso energético, reducción de costos y eficiencia sostenible.", icon: Zap },
 ];
 
 export const Certifications = () => {
