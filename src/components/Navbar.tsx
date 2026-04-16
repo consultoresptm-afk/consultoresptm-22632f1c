@@ -1,0 +1,123 @@
+import { useEffect, useState } from "react";
+import { Menu, X, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site-config";
+import { cn } from "@/lib/utils";
+
+const links = [
+  { label: "Inicio", href: "#inicio" },
+  { label: "Sobre Nosotros", href: "#nosotros" },
+  { label: "Servicios", href: "#servicios" },
+  { label: "Certificaciones ISO", href: "#certificaciones" },
+  { label: "Contacto", href: "#contacto" },
+];
+
+export const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const handleNav = (href: string) => {
+    setOpen(false);
+    if (href.startsWith("#")) {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  return (
+    <header
+      className={cn(
+        "fixed top-0 inset-x-0 z-50 transition-all duration-500",
+        scrolled
+          ? "bg-background/85 backdrop-blur-xl border-b border-border shadow-soft"
+          : "bg-transparent"
+      )}
+    >
+      <div className="container flex items-center justify-between h-20">
+        <a href="#inicio" onClick={(e) => { e.preventDefault(); handleNav("#inicio"); }} className="flex items-center gap-3 group">
+          <div className={cn(
+            "h-11 w-11 rounded-md flex items-center justify-center font-display font-bold text-lg transition-colors duration-300",
+            scrolled ? "bg-primary text-primary-foreground" : "bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/20 backdrop-blur"
+          )}>
+            PTM
+          </div>
+          <div className="hidden sm:block">
+            <div className={cn("font-display text-sm leading-tight", scrolled ? "text-foreground" : "text-primary-foreground")}>
+              Consultores PTM
+            </div>
+            <div className={cn("text-[10px] uppercase tracking-[0.18em]", scrolled ? "text-muted-foreground" : "text-primary-foreground/70")}>
+              Gestión & Cumplimiento
+            </div>
+          </div>
+        </a>
+
+        <nav className="hidden lg:flex items-center gap-8">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={(e) => { e.preventDefault(); handleNav(l.href); }}
+              className={cn(
+                "text-sm font-medium underline-grow transition-colors",
+                scrolled ? "text-foreground hover:text-accent" : "text-primary-foreground/90 hover:text-primary-foreground"
+              )}
+            >
+              {l.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="hidden lg:flex items-center gap-3">
+          <Button asChild variant="hero" size="sm">
+            <a href={siteConfig.brochureUrl} target="_blank" rel="noopener noreferrer">
+              Portafolio de Servicios
+              <ExternalLink className="ml-1" />
+            </a>
+          </Button>
+        </div>
+
+        <button
+          className={cn("lg:hidden p-2 rounded-md transition-colors", scrolled ? "text-foreground" : "text-primary-foreground")}
+          onClick={() => setOpen(!open)}
+          aria-label="Abrir menú"
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      <div
+        className={cn(
+          "lg:hidden overflow-hidden transition-all duration-500 bg-background/95 backdrop-blur-xl border-b border-border",
+          open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        )}
+      >
+        <div className="container py-6 flex flex-col gap-4">
+          {links.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={(e) => { e.preventDefault(); handleNav(l.href); }}
+              className="text-foreground py-2 border-b border-border/50 font-medium"
+            >
+              {l.label}
+            </a>
+          ))}
+          <Button asChild variant="hero" className="mt-2">
+            <a href={siteConfig.brochureUrl} target="_blank" rel="noopener noreferrer">
+              Portafolio de Servicios
+              <ExternalLink />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </header>
+  );
+};
