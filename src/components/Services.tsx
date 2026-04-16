@@ -1,6 +1,6 @@
 import { FileText, ExternalLink, MessageCircle, ArrowUpRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { siteConfig, whatsappLink } from "@/lib/site-config";
+import { siteConfig, whatsappLink, openWhatsApp } from "@/lib/site-config";
 import bgServicios from "@/assets/bg-servicios-ptm.jpg";
 
 export const Services = () => {
@@ -122,7 +122,7 @@ export const Services = () => {
                     ¿Prefieres asesoría personalizada?
                   </p>
                   <Button asChild variant="whatsapp" size="lg" className="w-full">
-                    <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+                    <a href={whatsappLink} onClick={(e) => { e.preventDefault(); openWhatsApp(); }} target="_blank" rel="noopener noreferrer">
                       <MessageCircle />
                       Hablar por WhatsApp
                     </a>

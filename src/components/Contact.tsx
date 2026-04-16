@@ -1,6 +1,6 @@
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { siteConfig, whatsappLink } from "@/lib/site-config";
+import { siteConfig, whatsappLink, openWhatsApp } from "@/lib/site-config";
 
 export const Contact = () => {
   return (
@@ -34,7 +34,7 @@ export const Contact = () => {
                 </div>
               </a>
 
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <a href={whatsappLink} onClick={(e) => { e.preventDefault(); openWhatsApp(); }} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                 <div className="w-12 h-12 rounded-md bg-primary-foreground/10 border border-primary-foreground/20 flex items-center justify-center text-teal group-hover:bg-teal group-hover:text-primary transition-all duration-300">
                   <Phone className="w-5 h-5" />
                 </div>
@@ -66,7 +66,7 @@ export const Contact = () => {
                 const form = e.currentTarget as HTMLFormElement;
                 const data = new FormData(form);
                 const msg = `Hola PTM, soy ${data.get("nombre")} de ${data.get("empresa")}. ${data.get("mensaje")}`;
-                window.open(`https://wa.me/${siteConfig.whatsappNumber.replace(/[^0-9]/g, "")}?text=${encodeURIComponent(msg)}`, "_blank");
+                openWhatsApp(msg);
               }}
             >
               <div className="grid sm:grid-cols-2 gap-4">
