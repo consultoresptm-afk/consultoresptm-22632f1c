@@ -55,7 +55,7 @@ export const Navbar = () => {
               height={48}
             />
           </div>
-          <div className="block">
+          <div className="flex flex-col">
             <div className={cn("font-display text-xs sm:text-sm leading-tight", scrolled ? "text-foreground" : "text-primary-foreground")}>
               Consultores PTM
             </div>
