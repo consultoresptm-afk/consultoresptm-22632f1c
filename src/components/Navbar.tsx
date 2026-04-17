@@ -55,11 +55,11 @@ export const Navbar = () => {
               height={48}
             />
           </div>
-          <div className="hidden sm:block">
-            <div className={cn("font-display text-sm leading-tight", scrolled ? "text-foreground" : "text-primary-foreground")}>
+          <div className="block">
+            <div className={cn("font-display text-xs sm:text-sm leading-tight", scrolled ? "text-foreground" : "text-primary-foreground")}>
               Consultores PTM
             </div>
-            <div className={cn("text-[10px] uppercase tracking-[0.18em]", scrolled ? "text-muted-foreground" : "text-primary-foreground/70")}>
+            <div className={cn("text-[8px] sm:text-[10px] uppercase tracking-[0.1em] sm:tracking-[0.18em]", scrolled ? "text-muted-foreground" : "text-primary-foreground/70")}>
               Gestión & Cumplimiento
             </div>
           </div>
