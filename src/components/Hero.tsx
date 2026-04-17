@@ -33,8 +33,8 @@ export const Hero = () => {
 
       <div className="container relative z-10 pt-28 sm:pt-32 pb-16 sm:pb-20">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 backdrop-blur-md text-primary-foreground/90 text-[10px] sm:text-xs uppercase tracking-[0.18em] sm:tracking-[0.22em] mb-6 sm:mb-8 reveal-up">
-            <ShieldCheck className="w-3.5 h-3.5 text-teal shrink-0" />
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 backdrop-blur-md text-primary-foreground/90 text-xs sm:text-sm uppercase tracking-[0.18em] sm:tracking-[0.22em] mb-6 sm:mb-8 reveal-up">
+            <ShieldCheck className="w-4 h-4 text-teal shrink-0" />
             <span>Consultoría empresarial certificada</span>
           </div>
 
