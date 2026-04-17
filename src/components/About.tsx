@@ -37,7 +37,7 @@ export const About = () => {
 
           {/* Content side */}
           <div>
-            <div className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] text-accent font-semibold mb-3 sm:mb-4">
+            <div className="text-sm sm:text-base uppercase tracking-[0.2em] sm:tracking-[0.25em] text-accent font-semibold mb-3 sm:mb-4">
               Sobre Nosotros
             </div>
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-primary leading-[1.15] sm:leading-[1.1] mb-5 sm:mb-6 text-balance">
