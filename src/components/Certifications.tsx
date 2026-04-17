@@ -1,4 +1,4 @@
-import { Award, Leaf, HardHat, Lock, Zap } from "lucide-react";
+import { Award, Leaf, HardHat, GraduationCap, Zap } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -55,18 +55,18 @@ const certs = [
     ],
   },
   {
-    code: "ISO 27001",
-    title: "Seguridad de la Información",
-    desc: "Protección de datos críticos y gestión de riesgos de ciberseguridad.",
-    icon: Lock,
+    code: "ISO 21001",
+    title: "Gestión de Organizaciones Educativas",
+    desc: "Estándar internacional para optimizar servicios educativos, mejorar la satisfacción de los alumnos y asegurar procesos de aprendizaje de alta calidad.",
+    icon: GraduationCap,
     context:
-      "La ISO 27001 define los requisitos para establecer un Sistema de Gestión de Seguridad de la Información (SGSI), protegiendo la confidencialidad, integridad y disponibilidad de los datos frente a amenazas internas y externas.",
+      "La ISO 21001 establece los requisitos para un Sistema de Gestión para Organizaciones Educativas (SGOE), con el objetivo de proporcionar un marco común para instituciones educativas que buscan mejorar sus procesos y atender mejor las necesidades de estudiantes y otros beneficiarios.",
     benefits: [
-      "Protección de información sensible y datos personales.",
-      "Reducción de riesgos de ciberataques y fugas de información.",
-      "Cumplimiento de leyes de protección de datos (GDPR, Habeas Data, etc.).",
-      "Mayor confianza de clientes, proveedores y aliados.",
-      "Continuidad del negocio frente a incidentes digitales.",
+      "Mejora en la calidad educativa y satisfacción de los estudiantes.",
+      "Procesos académicos y administrativos más eficientes.",
+      "Mayor credibilidad, prestigio institucional y confianza.",
+      "Alineación efectiva con políticas y requisitos del sector educativo.",
+      "Fomento de una cultura de mejora continua y excelencia.",
     ],
   },
   {
