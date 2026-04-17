@@ -39,7 +39,7 @@ export const Hero = () => {
           </div>
 
           <h1 className="font-display text-primary-foreground text-balance text-[2.25rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] sm:leading-[1.05] mb-5 sm:mb-6 reveal-up" style={{ animationDelay: "0.1s" }}>
-            Estrategia, cumplimiento{" "}
+            Estrategia, gestión, cumplimiento{" "}
             <span className="hidden sm:inline"><br /></span>
             y <span className="italic text-teal">excelencia</span> para tu organización.
           </h1>
@@ -66,8 +66,8 @@ export const Hero = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-12 mt-12 sm:mt-16 max-w-2xl reveal-up" style={{ animationDelay: "0.4s" }}>
             {[
-              { n: "+15", l: "Años de experiencia" },
-              { n: "+200", l: "Empresas asesoradas" },
+              { n: "+25", l: "Años de experiencia" },
+              { n: "+10", l: "Empresas asesoradas" },
               { n: "100%", l: "Compromiso con resultados" },
             ].map((s) => (
               <div key={s.l} className="border-l-2 border-teal/60 pl-3 sm:pl-4">
