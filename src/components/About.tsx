@@ -2,9 +2,21 @@ import { Target, Eye, Sparkles } from "lucide-react";
 import aboutImg from "@/assets/about-section.jpg";
 
 const pillars = [
-  { icon: Target, title: "Misión", text: "Acompañar a las organizaciones en la implementación de sistemas de gestión que aseguren cumplimiento normativo, eficiencia operativa y crecimiento sostenible." },
-  { icon: Eye, title: "Visión", text: "Ser la firma consultora líder en Colombia en certificación, gestión integral y cumplimiento, reconocida por la rigurosidad técnica y la cercanía con cada cliente." },
-  { icon: Sparkles, title: "Valores", text: "Integridad, excelencia técnica, confidencialidad, mejora continua y compromiso real con los resultados de cada empresa que confía en nosotros." },
+  {
+    icon: Target,
+    title: "Misión",
+    text: "Estamos comprometidos con el asesoramiento, implementación y certificación de sistemas de gestión que agregan valor a las organizaciones, asegurando el cumplimiento normativo de cada uno de sus procesos, contribuyendo a la sostenibilidad y mejora continua.",
+  },
+  {
+    icon: Eye,
+    title: "Visión",
+    text: "En el 2030 estar entre las mejores empresas de asesorías a nivel nacional en normativas de gestión; principalmente en el campo Ambiental, Seguridad y Salud en el Trabajo, Calidad, Eficiencia Energética, Seguridad Vial e Inocuidad, entre otras, definiendo procesos sostenibles que contribuyan a la rentabilidad de las organizaciones.",
+  },
+  {
+    icon: Sparkles,
+    title: "Principios y Valores",
+    text: "Integridad, Responsabilidad, Trabajo en equipo, Orientación al cliente, Innovación, Excelencia, Respeto, Compromiso, Adaptabilidad, Sostenibilidad, Relaciones mutuamente beneficiosas con el proveedor y Mejora continua.",
+  },
 ];
 
 export const About = () => {
