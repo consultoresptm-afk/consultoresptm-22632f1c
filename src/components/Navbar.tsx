@@ -44,13 +44,13 @@ export const Navbar = () => {
       <div className="container flex items-center justify-between h-20">
         <a href="#inicio" onClick={(e) => { e.preventDefault(); handleNav("#inicio"); }} className="flex items-center gap-3 group">
           <div className={cn(
-            "h-12 w-12 rounded-md flex items-center justify-center overflow-hidden transition-all duration-300 shadow-soft",
+            "h-12 w-12 rounded-[14px] flex items-center justify-center overflow-hidden transition-all duration-300 shadow-soft",
             scrolled ? "bg-white" : "bg-white/95 ring-1 ring-primary-foreground/20"
           )}>
             <img
               src={logoPtm}
               alt="Logo Consultores PTM Gestión y Cumplimiento SAS"
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover scale-[1.15]"
               width={48}
               height={48}
             />

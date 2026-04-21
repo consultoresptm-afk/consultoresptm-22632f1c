@@ -8,8 +8,8 @@ export const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 items-start">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="h-12 w-12 rounded-md bg-white p-1 flex items-center justify-center overflow-hidden shadow-soft">
-                <img src={logoPtm} alt="Logo PTM" className="h-full w-full object-contain" width={48} height={48} loading="lazy" />
+              <div className="h-12 w-12 rounded-[14px] bg-white flex items-center justify-center overflow-hidden shadow-soft">
+                <img src={logoPtm} alt="Logo PTM" className="h-full w-full object-cover scale-[1.15]" width={48} height={48} loading="lazy" />
               </div>
               <div>
                 <div className="font-display text-sm">Consultores PTM</div>
