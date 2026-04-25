@@ -5,6 +5,7 @@ export const siteConfig = {
   tagline: "Gestión, cumplimiento y certificación con visión estratégica",
   // 👉 Reemplaza este enlace por el brochure final (PDF, Drive, Canva, Notion...)
   brochureUrl: "https://propuesta-ptm.vercel.app/",
+  intranetUrl: "https://sistema-ptm.vercel.app/",
   whatsappNumber: "+573168203824",
   whatsappMessage: "Hola PTM, me interesa recibir asesoría personalizada.",
   email: "consultoresptm@gmail.com",

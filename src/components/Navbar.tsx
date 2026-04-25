@@ -81,10 +81,16 @@ export const Navbar = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3 flex-wrap justify-end">
           <Button asChild variant="hero" size="sm">
             <a href={siteConfig.brochureUrl} target="_blank" rel="noopener noreferrer">
               Portafolio de Servicios
+              <ExternalLink className="ml-1" />
+            </a>
+          </Button>
+          <Button asChild variant="hero" size="sm">
+            <a href={siteConfig.intranetUrl} target="_blank" rel="noopener noreferrer">
+              Intranet
               <ExternalLink className="ml-1" />
             </a>
           </Button>
@@ -117,12 +123,20 @@ export const Navbar = () => {
               {l.label}
             </a>
           ))}
-          <Button asChild variant="hero" className="mt-2">
-            <a href={siteConfig.brochureUrl} target="_blank" rel="noopener noreferrer">
-              Portafolio de Servicios
-              <ExternalLink />
-            </a>
-          </Button>
+          <div className="mt-2 flex flex-col gap-3">
+            <Button asChild variant="hero" className="w-full sm:w-auto">
+              <a href={siteConfig.brochureUrl} target="_blank" rel="noopener noreferrer">
+                Portafolio de Servicios
+                <ExternalLink />
+              </a>
+            </Button>
+            <Button asChild variant="hero" className="w-full sm:w-auto">
+              <a href={siteConfig.intranetUrl} target="_blank" rel="noopener noreferrer">
+                Intranet
+                <ExternalLink />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </header>
